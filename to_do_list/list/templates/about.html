@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{%block title%}about us{%endblock title%}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock css %}
+
+{% block content %}
+<section class="about-wrapper">
+
+    <div class="about-card">
+        <h2>About Our To-Do App</h2>
+        <p class="tagline">Stay organized. Stay productive. 🚀</p>
+
+        <p class="about-text">
+            Our To-Do List web app helps you manage daily tasks easily and efficiently.
+            You can create, update, and track your tasks so you never miss important work.
+            We designed this app with simplicity and productivity in mind.
+        </p>
+
+        <div class="features">
+            <div class="feature">
+                <span>✔</span>
+                <p>Create and manage tasks</p>
+            </div>
+            <div class="feature">
+                <span>✔</span>
+                <p>Mark tasks complete</p>
+            </div>
+            <div class="feature">
+                <span>✔</span>
+                <p>Clean and simple interface</p>
+            </div>
+        </div>
+
+        <div class="team">
+            <h3>Our Mission</h3>
+            <p>
+                We aim to help people stay productive and organized in their daily life
+                through simple and effective task management tools.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+{% endblock content %}

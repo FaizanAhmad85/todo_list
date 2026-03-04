@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %} <link rel="stylesheet" href="{% static 'css/home.css' %}"> {% endblock css %}
+{% block title %} home {% endblock title %}
+
+{% block content %}
+<img src= "{% static 'images/hero_section.png' %}" class="image" alt="todo image" >
+{% endblock content %}

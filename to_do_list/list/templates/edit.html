@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{%load static%}
+{%block title%}edit {%endblock title%}
+{% block content %}
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/todo.css' %}">
+{% endblock css %} 
+ <br>
+<br> 
+<br> 
+<br> 
+<br> 
+<br> 
+
+<div class="container">
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <input type="text" name="task" placeholder="{{task_obj.task}}" value="{{task_obj.task}}">
+        <button type="submit">UPDATE</button>
+    </form>
+</div>
+{% endblock content %}

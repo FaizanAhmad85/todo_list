@@ -1,0 +1,101 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: rgb(24, 107, 196);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between; /* Left aur Right ko door karne ke liye */
+    align-items: center;
+    padding: 0 30px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Links and Boxes */
+.nav-link {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+.box {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    margin: 0 5px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.nav-link:hover .box {
+    border: 2px solid rgb(9, 92, 90);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Special Background Colors */
+.login-box {
+    background-color: #28a745; /* Green */
+    font-weight: bold;
+}
+
+.register-box {
+    background-color: #ffc107; /* Yellow/Orange */
+    color: #333 !important;
+    font-weight: bold;
+}
+
+.logout-btn {
+    background-color: #dc3545; /* Red */
+    color: white;
+    border: none;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #b21f2d;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.username-tag {
+    color: white;
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Page Content Padding */
+.container {
+    padding-top: 56px; /* Navbar ke neeche jagah dene ke liye */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}

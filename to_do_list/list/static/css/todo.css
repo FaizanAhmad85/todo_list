@@ -1,0 +1,66 @@
+body {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+input {
+    width: 500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 40px;
+}
+
+button {
+    width: 100px;
+    padding: 2px;
+    border: none;
+    background: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: large;
+    height: 40px;
+    border: 2px solid transparent;
+}
+
+button:hover {
+    background: #45a049;
+    border: 2px solid black;
+}
+
+table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+tr.ch{
+    background-color: #a8e2aa;
+}
+
+.page td a{
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+}
+.massage{
+    margin-top: 30px;
+    height: 10px;
+    width: auto;
+    border: 2px solid transparent;
+}

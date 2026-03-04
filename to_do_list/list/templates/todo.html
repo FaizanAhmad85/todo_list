@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{%load static%}
+{%block title%}to do list {%endblock title%}
+
+{% block css %} 
+<link rel="stylesheet" href="{% static 'css/todo.css' %}">
+{% endblock css %} 
+
+
+{% block content %}
+
+<div class="massage">
+  {% for message in messages %}
+  {{message}}
+  {% endfor %}
+</div>
+
+<div class="container">
+
+    <form method="POST">
+        {% csrf_token %}
+        
+        <input type="text" name="task" placeholder="NEW TASK ?" required>
+        <button type="submit">ADD TASK</button>
+    </form>
+
+<!-- end submit button -->
+ <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Task Name</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+
+        <tbody>
+          {% for task in all_task %}
+          {% if task.is_completed%}
+          <tr class="ch">
+            <td>{{task.task}}</td>
+            <td><a href="{% url 'pending' task.id %}?page={{all_task.number}}">complete</a></td>
+            <td><a href="{% url 'edit' task.id %}?page={{all_task.number}}"><button class="btn edit-btn">Edit</button></a></td>
+            <td><a href="{% url 'delete' task.id %}?page={{all_task.number}}"><button class="btn delete-btn">Delete</button></a></td>
+          </tr>
+          {%else%}
+          <tr>
+            <td>{{task.task}}</td>
+            <td><a href="{% url 'complete' task.id %}?page={{all_task.number}} ">pending</a></td>
+            <td><a href="{% url 'edit' task.id %}?page={{all_task.number}}"><button class="btn edit-btn">Edit</button></a></td>
+            <td><a href="{% url 'delete' task.id %}?page={{all_task.number}}"><button class="btn delete-btn">Delete</button></a></td>
+          </tr>
+          {%endif%}
+          {% endfor %}
+        </tbody>
+    </table>
+
+
+    
+<div class="page">
+  <td><a href="?page=1"><<</a> </td>
+  {% if all_task.has_previous %}
+    <td><a href="?page= {{all_task.privious_page_number}}">{{all_task.privious.page.number}}</a> </td>
+  {% endif %}
+  <td><a href="?page= {{all_task.number}}">{{all_task.number}}</a> </td>
+  {% if all_task.has_next %}
+    <td><a href="?page= {{all_task.next_page_number}}">{{all_task.next_page_number}}</a> </td>
+  {% endif %}
+  <td><a href="?page= {{all_task.num_pages}}">>></a> </td>
+</div>
+{% endblock content%}
